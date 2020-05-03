@@ -31,13 +31,5 @@ public class AppModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
-    @Provides
-    @Singleton
-    static OkHttpClient provideOkHttpClient(Interceptor interceptor, Cache cache) {
-        return new OkHttpClient.Builder()
-                .cache(cache)
-                .addInterceptor(interceptor)
-                .build();
 
-    }
 }
